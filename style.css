@@ -1,0 +1,62 @@
+/* 1. Design Token Palette (:root) */
+:root {
+  --primary-color: #4F46E5;
+  --bg-light: #F3F4F6;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --text-dark: #1F2937;
+  --font-base: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-size: var(--font-base);
+  overflow-x: hidden;
+}
+
+/* 2. Responsive Dashboard Grid */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+header, aside, main, section {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* Fluid Breakpoints */
+@media (min-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container {
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+}
